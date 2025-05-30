@@ -2650,9 +2650,9 @@ value_type = max
   nl_rel_tol = 1e-10
   nl_abs_step_tol = 1e-10
 
-  dt = 1e-8
+  dt = 1e-5
   dtmin = 1e-15
-  end_time = 1e-8
+  end_time = 4e-4
   
 []
 
