@@ -699,7 +699,7 @@ execute_on = timestep_end
 type = RankTwoScalarAux
 rank_two_tensor = total_strain
 variable = strain_eff
-scalar_type = EffectiveStrain
+scalar_type = L2norm
 execute_on = timestep_end
 []
   [fp_yy]
