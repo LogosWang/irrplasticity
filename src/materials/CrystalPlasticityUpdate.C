@@ -510,7 +510,7 @@ CrystalPlasticityUpdate::calculateStateVariableEvolutionRateComponent()
     absslip[i]=std::abs(_slip_increment_old[_qp][i]);
   }
   Real _k2;
-  _k2=_k20*(_gamma0/std::max(0.00000000000001,std::abs(std::accumulate(absslip.begin(),absslip.end(),0.0))));
+  _k2=_k20*(_gamma0/std::max(0.00000001,std::abs(std::accumulate(absslip.begin(),absslip.end(),0.0))));
   _disloc_h_increment=std::abs(std::accumulate(absslip.begin(),absslip.end(),0.0))*(_k1*std::pow(_disloc_h_before_update,0.5)-_k2*_disloc_h_before_update);
   _srate[_qp]=std::abs(std::accumulate(absslip.begin(),absslip.end(),0.0));
   for (const auto i : make_range(_number_slip_systems))

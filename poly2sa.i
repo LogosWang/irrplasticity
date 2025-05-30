@@ -36,6 +36,10 @@ construct_side_list_from_node_list = false
     order = CONSTANT
     family = MONOMIAL
   []
+  [strain_eff]
+    order = CONSTANT
+    family = MONOMIAL
+  []
   [H_1]
     order = CONSTANT
     family = MONOMIAL
@@ -689,6 +693,13 @@ type = RankTwoScalarAux
 rank_two_tensor = stress
 variable = stress_vm
 scalar_type = VonMisesStress
+execute_on = timestep_end
+[]
+[strain_eff]
+type = RankTwoScalarAux
+rank_two_tensor = total_strain
+variable = strain_eff
+scalar_type = EffectiveStrain
 execute_on = timestep_end
 []
   [fp_yy]
@@ -2600,6 +2611,10 @@ value_type = max
   type = ElementAverageValue
   variable = strain_yy
 []
+[strain_eff]
+  type = ElementAverageValue
+  variable = strain_eff
+[]
 [cry_1]
   type = ElementAverageValue
   variable = cry_1
@@ -2622,11 +2637,11 @@ value_type = max
 []
 [Adaptivity]
   marker = marker
-  max_h_level = 3
+  max_h_level = 1
   [Indicators]
     [error]
       type = ValueJumpIndicator
-      variable = strain_yy
+      variable = strain_eff
     []
   []
   [Markers]
@@ -2634,7 +2649,7 @@ value_type = max
       type = ErrorFractionMarker
       coarsen = 0.3
       indicator = error
-      refine = 0.03
+      refine = 0.04
     []
   []
 []
