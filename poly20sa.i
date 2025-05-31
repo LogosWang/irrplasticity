@@ -40,6 +40,10 @@ construct_side_list_from_node_list = false
     order = CONSTANT
     family = MONOMIAL
   []
+  [strain_shear]
+    order = CONSTANT
+    family = MONOMIAL
+  []
   [H_1]
     order = CONSTANT
     family = MONOMIAL
@@ -700,6 +704,13 @@ type = RankTwoScalarAux
 rank_two_tensor = total_strain
 variable = strain_eff
 scalar_type = L2norm
+execute_on = timestep_end
+[]
+[strain_shear]
+type = RankTwoScalarAux
+rank_two_tensor = total_strain
+variable = strain_shear
+scalar_type = MaxShear
 execute_on = timestep_end
 []
   [fp_yy]
@@ -2615,6 +2626,10 @@ value_type = max
   type = ElementAverageValue
   variable = strain_eff
 []
+[strain_shear]
+  type = ElementAverageValue
+  variable = strain_shear
+[]
 [cry_1]
   type = ElementAverageValue
   variable = cry_1
@@ -2641,7 +2656,7 @@ value_type = max
   [Indicators]
     [error]
       type = ValueJumpIndicator
-      variable = strain_eff
+      variable = strain_shear
     []
   []
   [Markers]
