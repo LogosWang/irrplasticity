@@ -1,0 +1,6 @@
+Applications:
+    irrplasticity:
+        app_types:
+            - irrplasticityApp
+        content_directory: ${ROOT_DIR}/doc/content
+        log_default: WARNING

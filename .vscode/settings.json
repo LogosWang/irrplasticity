@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "CrystalPlasticityFccUpdate.C": "cpp",
+        "CrystalPlasticityTwinningUpdate.C": "cpp"
+    }
+}
