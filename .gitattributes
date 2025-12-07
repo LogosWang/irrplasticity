@@ -1,0 +1,16 @@
+*.e filter=lfs diff=lfs merge=lfs -text
+*.exo filter=lfs diff=lfs merge=lfs -text
+*.e-s* filter=lfs diff=lfs merge=lfs -text
+*.vtk filter=lfs diff=lfs merge=lfs -text
+*.vtu filter=lfs diff=lfs merge=lfs -text
+*.vti filter=lfs diff=lfs merge=lfs -text
+*.pvtu filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
+*.hdf5 filter=lfs diff=lfs merge=lfs -text
+*.nc filter=lfs diff=lfs merge=lfs -text
+*.xdmf filter=lfs diff=lfs merge=lfs -text
+*.bin filter=lfs diff=lfs merge=lfs -text
+*.dat filter=lfs diff=lfs merge=lfs -text
+outputs/** filter=lfs diff=lfs merge=lfs -text
+results/** filter=lfs diff=lfs merge=lfs -text
+
