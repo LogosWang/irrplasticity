@@ -575,6 +575,8 @@ CrystalPlasticityFccUpdate::calculateStateVariableEvolutionRateComponent()
 bool
 CrystalPlasticityFccUpdate::updateStateVariables()
 {
+  if (_gd[_qp].size() != _number_slip_systems)
+    _gd[_qp].resize(_number_slip_systems, 0.0);
   // Now perform the check to see if the slip system should be updated
   // std::vector<RealVectorValue> local_plane_normal;
   _H_increment*=_substep_dt;

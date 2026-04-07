@@ -1,5 +1,5 @@
-for rate in 100 200 300 400
+for rate in 50 150 200 250
 do
     echo "Running with twin rate $rate..."
-    mpiexec -n 22 ./irrplasticity-opt -i fcc0twin${rate}rate.i
+    mpiexec -n 6 ./irrplasticity-opt -i fcctwincalibrate${rate}.i --n-threads=4
 done

@@ -1091,7 +1091,7 @@ execute_on = timestep_end
     gss_initial =5.0
     ao = 4e7
     xm = 0.02
-    eta = 7.0
+    eta = 40.0
     dl = 6e-6
     k1 = 400.0
     k20 = 25.0
@@ -1502,7 +1502,7 @@ value_type = max
 
   dt = 1e-6
   dtmin = 1e-25
-  end_time = 5e-3
+  end_time = 1e-3
   
 []
 
@@ -1512,10 +1512,10 @@ value_type = max
   csv = true     
   perf_graph = true
   file_base = '/home/vool/projects/my_simulation_results'
-  [out]
-    type = Checkpoint
-    time_step_interval = 10
-    num_files = 5
-    wall_time_interval = 3600 # seconds
-  []
+#   [out]
+#     type = Checkpoint
+#     time_step_interval = 10
+#     num_files = 5
+#     wall_time_interval = 3600 # seconds
+#   []
 []

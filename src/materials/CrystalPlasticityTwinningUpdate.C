@@ -275,9 +275,11 @@ CrystalPlasticityTwinningUpdate::calculateTwinVolumeFraction()
 
   for (const auto i : make_range(_number_slip_systems))
   {
-    if (_previous_substep_twin_volume_fraction[i] < _zero_tol &&
-        _twin_volume_fraction_increment[_qp][i] < 0.0)
-      _twin_volume_fraction_increment[_qp][i] = _previous_substep_twin_volume_fraction[i];
+    if (_twin_volume_fraction_increment[_qp][i] < 0.0)
+      {
+        _twin_volume_fraction_increment[_qp][i] = 0.0;
+        _twin_volume_fraction[_qp][i] = _previous_substep_twin_volume_fraction[i];
+      }
     else
       _twin_volume_fraction[_qp][i] =
           _previous_substep_twin_volume_fraction[i] + _twin_volume_fraction_increment[_qp][i];

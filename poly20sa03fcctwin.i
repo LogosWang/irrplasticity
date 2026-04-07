@@ -983,6 +983,7 @@ value_type = max
   []
   [total_twin_volume]
   type = ElementExtremeValue
+  type = ElementExtremeValue
     variable = total_twin_volume
     value_type = max
   []

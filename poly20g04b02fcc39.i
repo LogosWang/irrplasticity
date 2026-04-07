@@ -1071,14 +1071,14 @@ execute_on = timestep_end
     type = FunctionDirichletBC
     variable = disp_y
     boundary = top
-    function = '(1.5e-5)*t'
+    function = '(3e-5)*t'
   []
-  [tdisp2]
-    type = FunctionDirichletBC
-    variable = disp_y
-    boundary = bottom
-    function = '(-1.5e-5)*t'
-  []
+#   [tdisp2]
+#     type = FunctionDirichletBC
+#     variable = disp_y
+#     boundary = bottom
+#     function = '(-1.5e-5)*t'
+#   []
 
 #   [fix_tx]
 #     type = DirichletBC
@@ -1087,13 +1087,13 @@ execute_on = timestep_end
 #     boundary = top
 #     value = 0
 #   []
-#   [fix_bx]
-#     type = DirichletBC
-#     variable = disp_x
-#     preset = true
-#     boundary = bottom
-#     value = 0
-#   []
+  [fix_bx]
+    type = DirichletBC
+    variable = disp_y
+    preset = true
+    boundary = bottom
+    value = 0
+  []
 #   [fix_tz]
 #     type = DirichletBC
 #     variable = disp_z
@@ -1143,10 +1143,10 @@ execute_on = timestep_end
     gss_initial =5.0
     ao = 3e4
     xm = 0.05
-    eta = 7.0
+    eta = 50.0
     dl = 6e-6
-    k1 = 400.0
-    k20 = 25.0
+    k1 = 500.0
+    k20 = 30.0
     gamma0 = 200.0
     loop_num_shock = 260
     loop_num_frank = 130
@@ -1603,16 +1603,16 @@ value_type = max
 
   petsc_options_iname = '-pc_type -pc_asm_overlap -sub_pc_type -ksp_type -ksp_gmres_restart'
   petsc_options_value = ' asm      2              lu            gmres     200'
-  nl_abs_tol = 1e-7
-  nl_rel_tol = 1e-7
+  nl_abs_tol = 5e-6
+  nl_rel_tol = 5e-6
   nl_abs_step_tol = 5e-5
   nl_rel_step_tol = 5e-5
-  l_tol=0.2
+  l_tol=0.5
   line_search = bt
-  dt = 5e-2
+  dt = 2e-2
   dtmin = 1e-25
 #   end_time = 2e-6
-  end_time = 5e1
+  end_time = 1e1
   
 []
 
